@@ -3,11 +3,12 @@ import java.io.IOException;
 import java.util.Arrays;
 
 
+
 public class Main {
    public static void main(String[] args) throws IOException {
         Scanner a = new Scanner(System.in);
         String b = a.nextLine();
-       calc(b);
+        calc(b);
    }
 
     public static String calc(String input) throws IOException {
@@ -20,15 +21,11 @@ public class Main {
                 Rimlian rimlian2 = Rimlian.valueOf(vvod[2]);
                 int arabic1 = rimlian1.getArab();
                 int arabic2 = rimlian2.getArab();
-               
                 switch (vvod[1]) {
 
                     case "+":
                         int out1 = arabic1 + arabic2;
                         for (Rimlian perevod: Rimlian.values()) {  //перебор с Инам
-                            //int end[] = new int[2];
-                            //System.out.println(out1);
-                            //System.out.println(perevod.getArab());
                             if(out1 > 0 ) {
                                 if (perevod.getArab() == out1) {
                                     System.out.println(perevod.toString());
@@ -42,6 +39,7 @@ public class Main {
                     case "-":
                         out1 = arabic1 - arabic2;
                         for (Rimlian perevod: Rimlian.values()) {  //перебор с Инам
+                            //int end[] = new int[2];
                             if(out1 > 0 ) {
                                 if (perevod.getArab() == out1) {
                                     System.out.println(perevod.toString());
@@ -55,11 +53,12 @@ public class Main {
                     case "*":
                         out1 = arabic1 * arabic2;
                         for (Rimlian perevod: Rimlian.values()) {  //перебор с Инам
+                            //int end[] = new int[2];
                             if(out1 > 0 ) {
                                 if (perevod.getArab() == out1) {
                                     System.out.println(perevod.toString());
                                     break;
-                                } 
+                                }
                             }else {
                                 throw new IOException();
                             }
@@ -87,22 +86,18 @@ public class Main {
                     case "+":
                         int out1 = Integer.parseInt(vvod[0]) + Integer.parseInt(vvod[2]);
                         System.out.println(out1);
-                        //calc(out);
                         break;
                     case "-":
                         out1 = Integer.parseInt(vvod[0]) - Integer.parseInt(vvod[2]);
                         System.out.println(out1);
-                        //calc(out);
                         break;
                     case "*":
                         out1 = Integer.parseInt(vvod[0]) * Integer.parseInt(vvod[2]);
                         System.out.println(out1);
-                        // calc(out);
                         break;
                     case "/":
                         out1 = Integer.parseInt(vvod[0]) / Integer.parseInt(vvod[2]);
                         System.out.println(out1);
-                        //calc(out);
                         break;
                     default:
                         System.out.println("Выраженеи введено неправильно");
